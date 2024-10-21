@@ -19,7 +19,7 @@ func _choose_random_characters(character: String):
 
 	pool_of_characters.shuffle()
 	
-	for n in range(4):
+	for n in range(_portrait_grid.get_children().size()):
 		picked_characters.append(_rebeccas[n])
 	
 	_create_portraits(picked_characters)

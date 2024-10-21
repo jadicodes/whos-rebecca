@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://g68minc3rrdv"]
+[gd_scene load_steps=14 format=3 uid="uid://g68minc3rrdv"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c01j3dpba64f3" path="res://resources/rebeccas/rebecca7.tres" id="9_d523i"]
 [ext_resource type="Resource" uid="uid://3dfcgvqex0wa" path="res://resources/rebeccas/rebecca8.tres" id="10_h7vcq"]
 [ext_resource type="Texture2D" uid="uid://dyw18ih7cgm18" path="res://game/placeholder_portrait.png" id="11_akvil"]
+[ext_resource type="PackedScene" uid="uid://c8rk85vfjbtj6" path="res://game/textbox/textbox.tscn" id="12_ar6a3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0kvg"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
@@ -87,3 +88,30 @@ texture = ExtResource("11_akvil")
 [node name="Portrait4" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
 layout_mode = 2
 texture = ExtResource("11_akvil")
+
+[node name="Textbox" parent="." instance=ExtResource("12_ar6a3")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 465.0
+offset_top = 14.0
+offset_right = 465.0
+offset_bottom = 14.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="LockInButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -71.0
+offset_right = -34.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Lock In Answer"
