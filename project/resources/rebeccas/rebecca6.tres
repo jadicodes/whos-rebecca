@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CharacterBase" load_steps=2 format=3 uid="uid://dwjn0lfu1y0dp"]
+
+[ext_resource type="Script" path="res://resources/character.gd" id="1_a6i0m"]
+
+[resource]
+script = ExtResource("1_a6i0m")
+traits = Array[String]([])

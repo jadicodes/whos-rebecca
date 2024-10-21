@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bos6t343kafa"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_j1ibj"]
+[ext_resource type="PackedScene" uid="uid://dg7xkexgkslnm" path="res://main_menu/main_menu.tscn" id="2_8hbvp"]
+[ext_resource type="PackedScene" uid="uid://g68minc3rrdv" path="res://game/game.tscn" id="3_y5x6j"]
+[ext_resource type="PackedScene" uid="uid://b02f4sga053sp" path="res://character_select/character_select.tscn" id="4_807xg"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1ibj")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_8hbvp")]
+layout_mode = 1
+
+[node name="Game" parent="." instance=ExtResource("3_y5x6j")]
+layout_mode = 1
+
+[node name="CharacterSelect" parent="." instance=ExtResource("4_807xg")]
+layout_mode = 1
+
+[connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]
+[connection signal="jared_selected" from="CharacterSelect" to="." method="_on_character_select_jared_selected"]
+[connection signal="rebecca_selected" from="CharacterSelect" to="." method="_on_character_select_rebecca_selected"]
