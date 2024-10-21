@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterBase" load_steps=2 format=3 uid="uid://bwjse4abuokqq"]
+[gd_resource type="Resource" script_class="CharacterBase" load_steps=3 format=3 uid="uid://bwjse4abuokqq"]
 
 [ext_resource type="Script" path="res://resources/character.gd" id="1_bn8al"]
+[ext_resource type="Texture2D" uid="uid://wn2yomsnsi5v" path="res://resources/rebeccas/phpr1.png" id="1_yb7oq"]
 
 [resource]
 script = ExtResource("1_bn8al")
+portrait = ExtResource("1_yb7oq")
 traits = Array[String]([])

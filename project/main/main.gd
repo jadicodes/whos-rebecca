@@ -24,9 +24,9 @@ func _on_main_menu_game_started() -> void:
 
 func _on_character_select_rebecca_selected() -> void:
 	_change_current_scene(game)
-	game.set_text("Rebecca")
+	game._choose_random_characters("Rebecca")
 
 
 func _on_character_select_jared_selected() -> void:
 	_change_current_scene(game)
-	game.set_text("Jared")
+	game._choose_random_characters("Jared")

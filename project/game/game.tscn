@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://g68minc3rrdv"]
+[gd_scene load_steps=13 format=3 uid="uid://g68minc3rrdv"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dwjn0lfu1y0dp" path="res://resources/rebeccas/rebecca6.tres" id="8_d2263"]
 [ext_resource type="Resource" uid="uid://c01j3dpba64f3" path="res://resources/rebeccas/rebecca7.tres" id="9_d523i"]
 [ext_resource type="Resource" uid="uid://3dfcgvqex0wa" path="res://resources/rebeccas/rebecca8.tres" id="10_h7vcq"]
+[ext_resource type="Texture2D" uid="uid://dyw18ih7cgm18" path="res://game/placeholder_portrait.png" id="11_akvil"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0kvg"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
@@ -39,7 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Game"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="PortraitContainerBackground" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -48,24 +49,41 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -320.0
 offset_top = -361.0
-offset_right = 133.0
+offset_right = 128.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v0kvg")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PortraitGridContainer" type="GridContainer" parent="PortraitContainerBackground"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.5
+offset_top = -167.5
+offset_right = 207.5
+offset_bottom = 167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
 
-[node name="Portrait1" type="TextureRect" parent="HBoxContainer"]
+[node name="Portrait1" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
 layout_mode = 2
+texture = ExtResource("11_akvil")
 
-[node name="Portrait2" type="TextureRect" parent="HBoxContainer"]
+[node name="Portrait2" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
 layout_mode = 2
+texture = ExtResource("11_akvil")
 
-[node name="Portrait3" type="TextureRect" parent="HBoxContainer"]
+[node name="Portrait3" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
 layout_mode = 2
+texture = ExtResource("11_akvil")
 
-[node name="Portrait4" type="TextureRect" parent="HBoxContainer"]
+[node name="Portrait4" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
 layout_mode = 2
+texture = ExtResource("11_akvil")
