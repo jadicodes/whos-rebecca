@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7xkexgkslnm"]
+[gd_scene load_steps=6 format=3 uid="uid://dg7xkexgkslnm"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_tycpl"]
+[ext_resource type="Shader" path="res://main_menu/scroll.gdshader" id="2_a0y5c"]
+[ext_resource type="Texture2D" uid="uid://2ppc3lom74tn" path="res://main_menu/portrait_scroll.png" id="3_e5223"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hey1n"]
+shader = ExtResource("2_a0y5c")
+shader_parameter/speed = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0610r"]
+bg_color = Color(0.207843, 0, 0.231373, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +20,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tycpl")
 
+[node name="ScrollBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 85.0
+offset_right = 646.0
+offset_bottom = 275.0
+
+[node name="PortraitScroll" type="TextureRect" parent="ScrollBackground"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_hey1n")
+layout_mode = 0
+offset_left = -87.0
+offset_top = 15.0
+offset_right = 1313.0
+offset_bottom = 175.0
+texture = ExtResource("3_e5223")
+
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,30 +44,91 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+offset_left = -31.0
+offset_top = 83.0
+offset_right = 31.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Start"
+text = "Play"
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 13.0
+offset_right = 252.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 96
+text = "Who's Rebecca?"
+horizontal_alignment = 1
+
+[node name="ExplanationButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -252.0
-offset_top = -115.0
-offset_right = 252.0
-offset_bottom = -55.0
+offset_left = -166.0
+offset_top = 119.0
+offset_right = 166.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Who's Rebecca?"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+text = "Wait, actually, who is Rebecca?"
+
+[node name="ExplanationPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0610r")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExplanationPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="ExplanationPanel/MarginContainer"]
+layout_mode = 2
+text = "Rebecca is my friend. We have known each other since we were, like, 8. I made this game for her 22nd birthday.
+
+The idea originates from a running joke in my friend group that I always introduce Rebecca, no matter how many times my friends have already heard me explain who Rebecca is. I tell a story about Rebecca, saying something like... \"I was visiting Rebecca this weekend! She's my friend from school.\" They all know that already. I talk about Rebecca all the time. They started responding sarcastically by asking, \"Who's Rebecca?\" every time I mention her.
+
+For the record, she's my friend that I knew from school. We're from the same hometown."
+autowrap_mode = 3
+
+[node name="OkButton" type="Button" parent="ExplanationPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -67.0
+offset_right = 25.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ok, cool."
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExplanationButton" to="." method="_on_explanation_button_pressed"]
+[connection signal="pressed" from="ExplanationPanel/OkButton" to="." method="_on_ok_button_pressed"]
