@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg7xkexgkslnm"]
+[gd_scene load_steps=9 format=3 uid="uid://dg7xkexgkslnm"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_tycpl"]
 [ext_resource type="Shader" path="res://main_menu/scroll.gdshader" id="2_a0y5c"]
@@ -7,6 +7,33 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hey1n"]
 shader = ExtResource("2_a0y5c")
 shader_parameter/speed = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tmoc"]
+bg_color = Color(1, 0.721569, 0.290196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mij1y"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo1lh"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0610r"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
@@ -23,9 +50,9 @@ script = ExtResource("1_tycpl")
 [node name="ScrollBackground" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 85.0
+offset_top = 63.0
 offset_right = 646.0
-offset_bottom = 275.0
+offset_bottom = 253.0
 
 [node name="PortraitScroll" type="TextureRect" parent="ScrollBackground"]
 texture_repeat = 2
@@ -50,7 +77,10 @@ offset_right = 31.0
 offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tmoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mij1y")
 text = "Play"
 
 [node name="Title" type="Label" parent="."]
@@ -59,10 +89,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -252.0
-offset_top = 13.0
+offset_top = -10.0
 offset_right = 252.0
-offset_bottom = 89.0
+offset_bottom = 66.0
 grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.502455, 0.251341, 0.0711169, 1)
 theme_override_font_sizes/font_size = 96
 text = "Who's Rebecca?"
 horizontal_alignment = 1
@@ -75,12 +106,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -166.0
-offset_top = 119.0
+offset_top = 127.0
 offset_right = 166.0
-offset_bottom = 153.0
+offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tmoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fo1lh")
 text = "Wait, actually, who is Rebecca?"
 
 [node name="ExplanationPanel" type="Panel" parent="."]
