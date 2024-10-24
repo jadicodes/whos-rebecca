@@ -24,7 +24,7 @@ window/stretch/mode="viewport"
 
 [gui]
 
-theme/custom_font="res://Kenney Mini Square Mono.ttf"
+theme/custom_font="res://Habbo.ttf"
 
 [rendering]
 
