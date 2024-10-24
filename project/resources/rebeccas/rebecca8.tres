@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_23buu")
 portrait = ExtResource("1_3bqp7")
-traits = Array[String]([])
+traits = Array[String](["placeholder", "okacehad", "jkhdakjsdhksajda"])

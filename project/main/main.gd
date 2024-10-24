@@ -30,3 +30,7 @@ func _on_character_select_rebecca_selected() -> void:
 func _on_character_select_jared_selected() -> void:
 	_change_current_scene(game)
 	game._choose_random_characters("Jared")
+
+
+func _on_game_answer_locked_in() -> void:
+	_change_current_scene(character_select)

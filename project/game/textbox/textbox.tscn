@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c8rk85vfjbtj6"]
+[gd_scene load_steps=2 format=3 uid="uid://c8rk85vfjbtj6"]
+
+[ext_resource type="Script" path="res://game/textbox/textbox.gd" id="1_3v5rk"]
 
 [node name="Textbox" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3v5rk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -21,22 +24,28 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Trait1" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 text = "A wonky ankle"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Trait2" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 text = "A wonky ankle"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Trait3" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 text = "A wonky ankle"
 horizontal_alignment = 1
 autowrap_mode = 3

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="CharacterBase" load_steps=3 format=3 uid="uid://bwjse4abuokqq"]
 
 [ext_resource type="Script" path="res://resources/character.gd" id="1_bn8al"]
-[ext_resource type="Texture2D" uid="uid://wn2yomsnsi5v" path="res://resources/rebeccas/phpr1.png" id="1_yb7oq"]
+[ext_resource type="Texture2D" uid="uid://baq6sqpldyflt" path="res://resources/rebeccas/rebecca_portrait_3.png" id="1_i0ly0"]
 
 [resource]
 script = ExtResource("1_bn8al")
-portrait = ExtResource("1_yb7oq")
-traits = Array[String]([])
+portrait = ExtResource("1_i0ly0")
+traits = Array[String](["Is having fun at a concert.", "Is fine with her crooked teeth.", "Let her friend do her makeup."])
