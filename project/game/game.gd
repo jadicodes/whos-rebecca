@@ -8,12 +8,7 @@ signal answer_locked_in
 
 func _choose_random_characters(character: String):
 	var picked_characters: Array[CharacterBase]
-	var pool_of_characters: Array[CharacterBase]
-
-	if character == "Rebecca":
-		pool_of_characters = _rebeccas
-	if character == "Jared":
-		pool_of_characters = _rebeccas
+	var pool_of_characters = _rebeccas
 
 	pool_of_characters.shuffle()
 	

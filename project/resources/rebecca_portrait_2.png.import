@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bby872lvosedo"
-path="res://.godot/imported/rebecca_portrait_4.png-7ecaf2313e2f44211821ee95153f3dcb.ctex"
+uid="uid://m7aeq650wkmf"
+path="res://.godot/imported/rebecca_portrait_2.png-239b6e81f2735b3133108d0e4440293a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/rebeccas/rebecca_portrait_4.png"
-dest_files=["res://.godot/imported/rebecca_portrait_4.png-7ecaf2313e2f44211821ee95153f3dcb.ctex"]
+source_file="res://resources/rebecca_portrait_2.png"
+dest_files=["res://.godot/imported/rebecca_portrait_2.png-239b6e81f2735b3133108d0e4440293a.ctex"]
 
 [params]
 

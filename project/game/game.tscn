@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
-[ext_resource type="Resource" uid="uid://ce80iqgri340c" path="res://resources/rebeccas/rebecca1.tres" id="3_srr07"]
-[ext_resource type="Resource" uid="uid://dp5855bkcd2cf" path="res://resources/rebeccas/rebecca2.tres" id="4_ryeib"]
-[ext_resource type="Resource" uid="uid://bwjse4abuokqq" path="res://resources/rebeccas/rebecca3.tres" id="5_uwgyg"]
-[ext_resource type="Resource" uid="uid://dt4bjx1s5u0ow" path="res://resources/rebeccas/rebecca4.tres" id="6_cucb4"]
-[ext_resource type="Resource" uid="uid://bcii5ahpsgjgj" path="res://resources/rebeccas/rebecca5.tres" id="7_itqgr"]
-[ext_resource type="Resource" uid="uid://dwjn0lfu1y0dp" path="res://resources/rebeccas/rebecca6.tres" id="8_d2263"]
-[ext_resource type="Resource" uid="uid://c01j3dpba64f3" path="res://resources/rebeccas/rebecca7.tres" id="9_d523i"]
-[ext_resource type="Resource" uid="uid://3dfcgvqex0wa" path="res://resources/rebeccas/rebecca8.tres" id="10_h7vcq"]
-[ext_resource type="Texture2D" uid="uid://dyw18ih7cgm18" path="res://game/placeholder_portrait.png" id="11_akvil"]
+[ext_resource type="Resource" uid="uid://ce80iqgri340c" path="res://resources/rebecca1.tres" id="3_srr07"]
+[ext_resource type="Resource" uid="uid://dp5855bkcd2cf" path="res://resources/rebecca2.tres" id="4_ryeib"]
+[ext_resource type="Resource" uid="uid://bwjse4abuokqq" path="res://resources/rebecca3.tres" id="5_uwgyg"]
+[ext_resource type="Resource" uid="uid://dt4bjx1s5u0ow" path="res://resources/rebecca4.tres" id="6_cucb4"]
+[ext_resource type="Resource" uid="uid://bcii5ahpsgjgj" path="res://resources/rebecca5.tres" id="7_itqgr"]
+[ext_resource type="Resource" uid="uid://dwjn0lfu1y0dp" path="res://resources/rebecca6.tres" id="8_d2263"]
+[ext_resource type="Resource" uid="uid://c01j3dpba64f3" path="res://resources/rebecca7.tres" id="9_d523i"]
+[ext_resource type="Resource" uid="uid://3dfcgvqex0wa" path="res://resources/rebecca8.tres" id="10_h7vcq"]
+[ext_resource type="PackedScene" uid="uid://dvipta2vblwk6" path="res://game/portrait_buttons/portrait_button.tscn" id="11_awxjo"]
 [ext_resource type="PackedScene" uid="uid://c8rk85vfjbtj6" path="res://game/textbox/textbox.tscn" id="12_ar6a3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0kvg"]
@@ -73,21 +73,17 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Portrait1" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
+[node name="PortraitButton" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
 layout_mode = 2
-texture = ExtResource("11_akvil")
 
-[node name="Portrait2" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
+[node name="PortraitButton2" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
 layout_mode = 2
-texture = ExtResource("11_akvil")
 
-[node name="Portrait3" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
+[node name="PortraitButton3" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
 layout_mode = 2
-texture = ExtResource("11_akvil")
 
-[node name="Portrait4" type="TextureRect" parent="PortraitContainerBackground/PortraitGridContainer"]
+[node name="PortraitButton4" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
 layout_mode = 2
-texture = ExtResource("11_akvil")
 
 [node name="Textbox" parent="." instance=ExtResource("12_ar6a3")]
 layout_mode = 1
@@ -109,9 +105,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -185.0
-offset_top = -55.0
+offset_top = -48.0
 offset_right = -9.0
-offset_bottom = -24.0
+offset_bottom = -17.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Lock In Answer"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterBase" load_steps=3 format=3 uid="uid://bcii5ahpsgjgj"]
 
 [ext_resource type="Script" path="res://resources/character.gd" id="1_cad1u"]
-[ext_resource type="Texture2D" uid="uid://b4b1homlhbm7m" path="res://resources/rebeccas/rebecca_portrait_5.png" id="1_qhctw"]
+[ext_resource type="Texture2D" uid="uid://b4b1homlhbm7m" path="res://resources/rebecca_portrait_5.png" id="1_qhctw"]
 
 [resource]
 script = ExtResource("1_cad1u")

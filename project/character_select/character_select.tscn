@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b02f4sga053sp"]
+[gd_scene load_steps=4 format=3 uid="uid://b02f4sga053sp"]
 
 [ext_resource type="Script" path="res://character_select/character_select.gd" id="1_wlqgv"]
 [ext_resource type="Texture2D" uid="uid://vutu6eabcog0" path="res://character_select/rebecca.png" id="2_hmcdi"]
-[ext_resource type="Texture2D" uid="uid://ce3y7h13olbn2" path="res://character_select/jared.png" id="3_q6mc2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a076s"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
@@ -33,17 +32,18 @@ horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -210.5
-offset_top = -154.5
-offset_right = 210.5
-offset_bottom = 160.5
-grow_horizontal = 2
+offset_left = -449.0
+offset_top = -157.0
+offset_right = -28.0
+offset_bottom = 158.0
+grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.630303, 0.995089)
 theme_override_styles/panel = SubResource("StyleBoxFlat_a076s")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -53,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -130.0
-offset_right = 190.0
-offset_bottom = 136.0
+offset_left = -80.0
+offset_top = -133.0
+offset_right = 80.0
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 35
@@ -66,9 +66,4 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("2_hmcdi")
 
-[node name="JaredButton" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_q6mc2")
-
 [connection signal="pressed" from="HBoxContainer/RebeccaButton" to="." method="_on_rebecca_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/JaredButton" to="." method="_on_jared_button_pressed"]
