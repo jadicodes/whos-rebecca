@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://g68minc3rrdv"]
+[gd_scene load_steps=16 format=3 uid="uid://g68minc3rrdv"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
@@ -15,6 +15,24 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0kvg"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e83q5"]
+bg_color = Color(1, 0.721569, 0.290196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vr71"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -74,15 +92,19 @@ theme_override_constants/v_separation = 15
 columns = 2
 
 [node name="PortraitButton" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PortraitButton2" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PortraitButton3" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PortraitButton4" parent="PortraitContainerBackground/PortraitGridContainer" instance=ExtResource("11_awxjo")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Textbox" parent="." instance=ExtResource("12_ar6a3")]
@@ -110,6 +132,10 @@ offset_right = -9.0
 offset_bottom = -17.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_e83q5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2vr71")
 text = "Lock In Answer"
 
+[connection signal="portrait_pressed" from="PortraitContainerBackground/PortraitGridContainer/PortraitButton" to="." method="_on_portrait_button_portrait_pressed"]
+[connection signal="portrait_pressed" from="PortraitContainerBackground/PortraitGridContainer/PortraitButton2" to="." method="_on_portrait_button_portrait_pressed"]
 [connection signal="pressed" from="LockInButton" to="." method="_on_lock_in_button_pressed"]

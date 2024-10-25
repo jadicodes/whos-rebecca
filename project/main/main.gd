@@ -32,5 +32,9 @@ func _on_character_select_jared_selected() -> void:
 	game._choose_random_characters("Jared")
 
 
-func _on_game_answer_locked_in() -> void:
-	_change_current_scene(character_select)
+func _on_game_correct() -> void:
+	pass # Replace with function body.
+
+
+func _on_game_wrong() -> void:
+	pass # Replace with function body.

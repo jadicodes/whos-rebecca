@@ -49,9 +49,9 @@ script = ExtResource("1_tycpl")
 
 [node name="ScrollBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
+offset_left = -2.0
 offset_top = 63.0
-offset_right = 646.0
+offset_right = 642.0
 offset_bottom = 253.0
 
 [node name="PortraitScroll" type="TextureRect" parent="ScrollBackground"]
