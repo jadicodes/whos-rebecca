@@ -19,7 +19,6 @@ func set_portrait():
 
 
 func _on_frame_button_pressed() -> void:
-	print("Pressed")
 	emit_signal("portrait_pressed")
 
 

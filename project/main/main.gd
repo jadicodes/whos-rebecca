@@ -20,6 +20,7 @@ func _change_current_scene(scene: Node):
 
 func _on_main_menu_game_started() -> void:
 	_change_current_scene(character_select)
+	character_select.start()
 
 
 func _on_character_select_rebecca_selected() -> void:

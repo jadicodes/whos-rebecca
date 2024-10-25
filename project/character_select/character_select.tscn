@@ -1,10 +1,111 @@
-[gd_scene load_steps=4 format=3 uid="uid://b02f4sga053sp"]
+[gd_scene load_steps=13 format=3 uid="uid://b02f4sga053sp"]
 
 [ext_resource type="Script" path="res://character_select/character_select.gd" id="1_wlqgv"]
 [ext_resource type="Texture2D" uid="uid://vutu6eabcog0" path="res://character_select/rebecca.png" id="2_hmcdi"]
+[ext_resource type="Texture2D" uid="uid://bxxeibgx7ilft" path="res://character_select/jadi1.png" id="3_k6h2u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a076s"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
+
+[sub_resource type="Animation" id="Animation_ur1bu"]
+resource_name = "text1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_fy8wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x087j"]
+_data = {
+"RESET": SubResource("Animation_fy8wn"),
+"text1": SubResource("Animation_ur1bu")
+}
+
+[sub_resource type="Animation" id="Animation_g3f5k"]
+resource_name = "text2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0gfno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6jwk"]
+_data = {
+"RESET": SubResource("Animation_0gfno"),
+"text2": SubResource("Animation_g3f5k")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg1f5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.721569, 0.290196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdtu5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -20,15 +121,36 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
-offset_top = 3.0
-offset_right = 320.0
-offset_bottom = 68.0
+offset_left = -295.0
+offset_top = 22.0
+offset_right = 59.0
+offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
-theme_override_font_sizes/font_size = 16
-text = "Who are we talking about?"
+theme_override_font_sizes/font_size = 32
+text = "I need to start this game by telling you about my friend Rebecca. Yeah, my friend from high school."
 horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.0
+offset_top = 212.0
+offset_right = 81.0
+offset_bottom = 325.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
+theme_override_font_sizes/font_size = 32
+text = "There was this one time that she..."
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -37,33 +159,50 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -449.0
-offset_top = -157.0
-offset_right = -28.0
-offset_bottom = 158.0
+offset_left = -238.0
+offset_top = -156.0
+offset_right = 113.0
+offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.630303, 0.995089)
 theme_override_styles/panel = SubResource("StyleBoxFlat_a076s")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -133.0
-offset_right = 80.0
-offset_bottom = 133.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 35
-alignment = 1
-
-[node name="RebeccaButton" type="TextureButton" parent="HBoxContainer"]
+[node name="RebeccaButton" type="TextureButton" parent="."]
 layout_mode = 2
+offset_left = 434.0
+offset_top = 47.0
+offset_right = 594.0
+offset_bottom = 313.0
 texture_normal = ExtResource("2_hmcdi")
 
-[connection signal="pressed" from="HBoxContainer/RebeccaButton" to="." method="_on_rebecca_button_pressed"]
+[node name="Jadi1" type="Sprite2D" parent="."]
+position = Vector2(104, 247)
+texture = ExtResource("3_k6h2u")
+
+[node name="Dialog1" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x087j")
+}
+
+[node name="Dialog2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q6jwk")
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 252.0
+offset_top = 315.0
+offset_right = 338.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg1f5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdtu5")
+text = "Go on..."
+
+[connection signal="pressed" from="RebeccaButton" to="." method="_on_rebecca_button_pressed"]
+[connection signal="animation_finished" from="Dialog1" to="." method="_on_dialog_1_animation_finished"]
+[connection signal="animation_finished" from="Dialog2" to="." method="_on_dialog_2_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

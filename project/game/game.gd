@@ -54,21 +54,14 @@ func _set_traits(rebecca):
 # When lock in button is pressed, emit signal to alert main
 
 func _on_lock_in_button_pressed() -> void:
-	print("s: " + str(selected_rebecca))
-	print("c: " + str(correct_rebecca))
 	if selected_rebecca == correct_rebecca:
-		print("win")
 		emit_signal("correct")
 	else:
-		print("lose")
 		emit_signal("wrong")
 
 
 func _on_portrait_button_pressed(portrait_button: PortraitButton):
-	print("SIGNAL RECIEVED!!!!!!!!")
 	selected_rebecca = portrait_button.get_rebecca()
-	print(portrait_button.get_rebecca())
-	print(selected_rebecca)
 	for child in _portrait_grid.get_children():
 		if child.get_rebecca() != selected_rebecca:
 			child.unpress()

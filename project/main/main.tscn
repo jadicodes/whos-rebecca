@@ -26,5 +26,4 @@ layout_mode = 1
 [connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]
 [connection signal="correct" from="Game" to="." method="_on_game_correct"]
 [connection signal="wrong" from="Game" to="." method="_on_game_wrong"]
-[connection signal="jared_selected" from="CharacterSelect" to="." method="_on_character_select_jared_selected"]
 [connection signal="rebecca_selected" from="CharacterSelect" to="." method="_on_character_select_rebecca_selected"]
