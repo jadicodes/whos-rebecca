@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b02f4sga053sp"]
+[gd_scene load_steps=15 format=3 uid="uid://b02f4sga053sp"]
 
 [ext_resource type="Script" path="res://character_select/character_select.gd" id="1_wlqgv"]
 [ext_resource type="Texture2D" uid="uid://vutu6eabcog0" path="res://character_select/rebecca.png" id="2_hmcdi"]
 [ext_resource type="Texture2D" uid="uid://bxxeibgx7ilft" path="res://character_select/jadi1.png" id="3_k6h2u"]
+[ext_resource type="Texture2D" uid="uid://da25n1ofrchui" path="res://character_select/jadi2.png" id="4_7mio5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a076s"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
@@ -107,6 +108,28 @@ corner_radius_bottom_left = 5
 shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
 shadow_size = 3
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3cpn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k6h2u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k6h2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7mio5")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -176,10 +199,6 @@ offset_right = 594.0
 offset_bottom = 313.0
 texture_normal = ExtResource("2_hmcdi")
 
-[node name="Jadi1" type="Sprite2D" parent="."]
-position = Vector2(104, 247)
-texture = ExtResource("3_k6h2u")
-
 [node name="Dialog1" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_x087j")
@@ -194,13 +213,18 @@ libraries = {
 visible = false
 layout_mode = 0
 offset_left = 252.0
-offset_top = 315.0
+offset_top = 302.0
 offset_right = 338.0
-offset_bottom = 351.0
+offset_bottom = 338.0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg1f5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdtu5")
 text = "Go on..."
+
+[node name="TalkingJadi" type="AnimatedSprite2D" parent="."]
+position = Vector2(107, 245)
+sprite_frames = SubResource("SpriteFrames_j3cpn")
+speed_scale = 2.0
 
 [connection signal="pressed" from="RebeccaButton" to="." method="_on_rebecca_button_pressed"]
 [connection signal="animation_finished" from="Dialog1" to="." method="_on_dialog_1_animation_finished"]
