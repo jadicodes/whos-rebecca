@@ -10,7 +10,7 @@ bg_color = Color(0.207843, 0, 0.231373, 1)
 
 [sub_resource type="Animation" id="Animation_ur1bu"]
 resource_name = "text1"
-length = 5.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,7 +18,7 @@ tracks/0/path = NodePath("Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -47,7 +47,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_g3f5k"]
 resource_name = "text2"
-length = 3.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,7 +55,7 @@ tracks/0/path = NodePath("Label2:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -144,10 +144,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -295.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 135.0
+offset_left = -299.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 133.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
 theme_override_font_sizes/font_size = 32
@@ -162,14 +162,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -159.0
-offset_top = 212.0
-offset_right = 81.0
-offset_bottom = 325.0
+offset_left = -150.0
+offset_top = 141.0
+offset_right = 90.0
+offset_bottom = 312.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
 theme_override_font_sizes/font_size = 32
-text = "There was this one time that she..."
+text = "You need to try and visualize the Rebecca that I'm talking about. It's the only way the story makes sense."
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters = 0
@@ -182,9 +182,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -238.0
+offset_left = -220.0
 offset_top = -156.0
-offset_right = 113.0
+offset_right = 105.0
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -214,15 +214,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vdtu5")
 text = "Go on..."
 
 [node name="TalkingJadi" type="AnimatedSprite2D" parent="."]
-position = Vector2(107, 245)
+position = Vector2(96, 245)
 sprite_frames = SubResource("SpriteFrames_j3cpn")
 speed_scale = 2.0
 
 [node name="Rebecca" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 434.0
+offset_left = 442.0
 offset_top = 49.0
-offset_right = 594.0
+offset_right = 602.0
 offset_bottom = 315.0
 texture = ExtResource("2_hmcdi")
 

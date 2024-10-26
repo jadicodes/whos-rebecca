@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_cad1u")
 portrait = ExtResource("1_qhctw")
-traits = Array[String](["Had fun at a concert.", "Wore enough sunscreen (for once).", "Made the whole place *shimmer*."])
+traits = Array[String](["just had so much fun at a concert.", "actually worn enough sunscreen (for once).", "definitely made the whole place *shimmer*."])
