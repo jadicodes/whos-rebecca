@@ -14,28 +14,29 @@ script = ExtResource("1_3v5rk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 70.0
+offset_top = 37.0
 offset_right = 150.0
-offset_bottom = 280.0
+offset_bottom = 247.0
 texture = ExtResource("2_8y06o")
 
 [node name="Label" type="Label" parent="TextureRect"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-offset_top = -68.0
-offset_right = 151.0
-offset_bottom = -13.0
+offset_left = -2.0
+offset_top = 215.0
+offset_right = 155.0
+offset_bottom = 270.0
 theme_override_font_sizes/font_size = 32
-text = "This Rebecca..."
+text = "I mean, can you picture it?"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 103.0
-offset_right = 143.0
-offset_bottom = 182.0
+offset_left = 14.0
+offset_top = 71.0
+offset_right = 141.0
+offset_bottom = 150.0
 theme_override_constants/separation = 20
 
 [node name="Trait1" type="Label" parent="VBoxContainer"]

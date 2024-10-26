@@ -6,14 +6,6 @@ signal rebecca_selected
 func start():
 	$Dialog1.play("text1")
 	$TalkingJadi.play("talking")
-	
-
-func _on_rebecca_button_pressed() -> void:
-	emit_signal("rebecca_selected")
-
-
-func _on_jared_button_pressed() -> void:
-	emit_signal("jared_selected")
 
 
 func _on_dialog_1_animation_finished(anim_name: StringName) -> void:
