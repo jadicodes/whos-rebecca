@@ -1,0 +1,240 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwwufepm6woem"]
+
+[ext_resource type="Texture2D" uid="uid://dbuab6kc8vmel" path="res://end_screen/jadi3.png" id="1_ikcl5"]
+[ext_resource type="Script" path="res://end_screen/end_screen.gd" id="1_mdw3u"]
+[ext_resource type="Texture2D" uid="uid://bxxeibgx7ilft" path="res://character_select/jadi1.png" id="2_psght"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcbrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ikcl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_psght")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ikcl5")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8ka8"]
+bg_color = Color(1, 0.721569, 0.290196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wje0u"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbivl"]
+bg_color = Color(1, 0.721569, 0.290196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m152q"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
+shadow_size = 3
+
+[sub_resource type="Animation" id="Animation_31m8l"]
+resource_name = "talk1"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScoreLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_g16qx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScoreLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gar0n"]
+_data = {
+"RESET": SubResource("Animation_g16qx"),
+"talk1": SubResource("Animation_31m8l")
+}
+
+[sub_resource type="Animation" id="Animation_tp74c"]
+resource_name = "talk2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestionLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_i36j2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestionLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qk7yj"]
+_data = {
+"RESET": SubResource("Animation_i36j2"),
+"talk2": SubResource("Animation_tp74c")
+}
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mdw3u")
+
+[node name="TalkingJadi" type="AnimatedSprite2D" parent="."]
+position = Vector2(97, 246)
+sprite_frames = SubResource("SpriteFrames_mcbrk")
+animation = &"talking"
+speed_scale = 2.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.5
+offset_top = 100.0
+offset_right = 227.5
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Wow! You got through     Rebecca stories!"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -133.0
+offset_right = 106.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Do you wanna hear some more?"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="YesButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -62.0
+offset_right = -17.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_i8ka8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wje0u")
+text = "Yes!"
+
+[node name="NoButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -62.0
+offset_right = 59.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_vbivl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m152q")
+text = "No..."
+
+[node name="Dialog1" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gar0n")
+}
+
+[node name="Dialog2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qk7yj")
+}
+
+[connection signal="pressed" from="YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="animation_finished" from="Dialog1" to="." method="_on_dialog_1_animation_finished"]
+[connection signal="animation_finished" from="Dialog2" to="." method="_on_dialog_2_animation_finished"]

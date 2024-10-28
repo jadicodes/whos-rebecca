@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bos6t343kafa"]
+[gd_scene load_steps=6 format=3 uid="uid://bos6t343kafa"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_j1ibj"]
 [ext_resource type="PackedScene" uid="uid://dg7xkexgkslnm" path="res://main_menu/main_menu.tscn" id="2_8hbvp"]
 [ext_resource type="PackedScene" uid="uid://g68minc3rrdv" path="res://game/game.tscn" id="3_y5x6j"]
 [ext_resource type="PackedScene" uid="uid://b02f4sga053sp" path="res://character_select/character_select.tscn" id="4_807xg"]
+[ext_resource type="PackedScene" uid="uid://bwwufepm6woem" path="res://end_screen/end_screen.tscn" id="5_leqlb"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -23,7 +24,11 @@ layout_mode = 1
 [node name="CharacterSelect" parent="." instance=ExtResource("4_807xg")]
 layout_mode = 1
 
+[node name="EndScreen" parent="." instance=ExtResource("5_leqlb")]
+layout_mode = 1
+
 [connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]
-[connection signal="correct" from="Game" to="." method="_on_game_correct"]
-[connection signal="wrong" from="Game" to="." method="_on_game_wrong"]
+[connection signal="game_over" from="Game" to="." method="_on_game_game_over"]
 [connection signal="rebecca_selected" from="CharacterSelect" to="." method="_on_character_select_rebecca_selected"]
+[connection signal="no_button_pressed" from="EndScreen" to="." method="_on_end_screen_no_button_pressed"]
+[connection signal="yes_button_pressed" from="EndScreen" to="." method="_on_end_screen_yes_button_pressed"]

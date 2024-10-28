@@ -140,6 +140,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="Label" type="Label" parent="ExplanationPanel/MarginContainer"]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 text = "Rebecca is my friend. We have known each other since we were, like, 8. I made this game for her 22nd birthday.
 

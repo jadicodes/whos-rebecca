@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://g68minc3rrdv"]
+[gd_scene load_steps=18 format=3 uid="uid://g68minc3rrdv"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
@@ -33,6 +33,20 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_color = Color(0.501961, 0.25098, 0.0705882, 1)
 shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts4ml"]
+bg_color = Color(0.207843, 0, 0.231373, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1l7y"]
+bg_color = Color(0.929412, 0.482353, 0.223529, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -112,10 +126,10 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 468.0
-offset_top = 26.0
-offset_right = 468.0
-offset_bottom = 26.0
+offset_left = 469.0
+offset_top = 47.0
+offset_right = 469.0
+offset_bottom = 47.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -136,6 +150,50 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_e83q5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2vr71")
 text = "Lock In Answer"
 
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 18.0
+text = "Time: "
+
+[node name="BarOutline" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 3.0
+offset_right = 635.0
+offset_bottom = 24.0
+color = Color(0.207843, 0, 0.231373, 1)
+
+[node name="TimeBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 5.0
+offset_right = 633.0
+offset_bottom = 22.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ts4ml")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d1l7y")
+max_value = 30.0
+step = 1.0
+value = 20.0
+show_percentage = false
+
+[node name="PointsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 26.0
+offset_right = 496.0
+offset_bottom = 39.0
+text = "Points:"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="correct" from="." to="." method="_on_correct"]
+[connection signal="wrong" from="." to="." method="_on_wrong"]
 [connection signal="portrait_pressed" from="PortraitContainerBackground/PortraitGridContainer/PortraitButton" to="." method="_on_portrait_button_portrait_pressed"]
 [connection signal="portrait_pressed" from="PortraitContainerBackground/PortraitGridContainer/PortraitButton2" to="." method="_on_portrait_button_portrait_pressed"]
 [connection signal="pressed" from="LockInButton" to="." method="_on_lock_in_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

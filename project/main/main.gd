@@ -3,6 +3,7 @@ extends Control
 @onready var main_menu = $MainMenu
 @onready var game = $Game
 @onready var character_select = $CharacterSelect
+@onready var end_screen = $EndScreen
 
 
 func _ready():
@@ -25,17 +26,20 @@ func _on_main_menu_game_started() -> void:
 
 func _on_character_select_rebecca_selected() -> void:
 	_change_current_scene(game)
-	game._choose_random_characters("Rebecca")
+	game.start()
 
 
-func _on_character_select_jared_selected() -> void:
+func _on_end_screen_yes_button_pressed() -> void:
 	_change_current_scene(game)
-	game._choose_random_characters("Jared")
+	game.start()
 
 
-func _on_game_correct() -> void:
-	pass # Replace with function body.
+func _on_end_screen_no_button_pressed() -> void:
+	_change_current_scene(main_menu)
 
 
-func _on_game_wrong() -> void:
-	pass # Replace with function body.
+func _on_game_game_over() -> void:
+	var _score = game.get_score()
+	end_screen.set_score(_score)
+	_change_current_scene(end_screen)
+	end_screen.start()

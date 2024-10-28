@@ -2,9 +2,11 @@ extends Control
 
 signal correct
 signal wrong
+signal game_over
 
 var correct_rebecca: CharacterBase
 var selected_rebecca: CharacterBase
+var points: int
 
 @export var _rebeccas: Array[CharacterBase]
 @onready var _portrait_grid = %PortraitGridContainer
@@ -16,9 +18,35 @@ func _ready():
 	%PortraitButton3.portrait_pressed.connect(_on_portrait_button_pressed.bind(%PortraitButton3))
 	%PortraitButton4.portrait_pressed.connect(_on_portrait_button_pressed.bind(%PortraitButton4))
 
+
+func _process(delta: float) -> void:
+	$TimeBar.value = $Timer.time_left
+	$PointsLabel.text = "Points: " + str(points)
+
+
+# Start for the game, resets EVERYTHING
+
+func start() -> void:
+	_reset_game()
+	$TimeBar.value = 30
+	$Timer.start()
+	points = 0
+
+# Reset the portraits and create new selectable Rebecca
+
+func _reset_game() -> void:
+	_choose_random_characters()
+	for child in _portrait_grid.get_children():
+		child.unpress()
+
+
+func get_score() -> int:
+	return points
+
+
 # Choose 4 random Rebecca's from the array of all Rebecca's
 
-func _choose_random_characters(character: String):
+func _choose_random_characters() -> void:
 	var picked_characters: Array[CharacterBase]
 	var pool_of_characters = _rebeccas
 
@@ -66,9 +94,15 @@ func _on_portrait_button_pressed(portrait_button: PortraitButton):
 		if child.get_rebecca() != selected_rebecca:
 			child.unpress()
 
-# When a button is pressed, all other buttons become unpressed.
 
-# When any button is pressed, the lock in button becomes enabled.
-# If no buttons are pressed, the lock in button becomes disabled.
+func _on_correct() -> void:
+	points += 1
+	_reset_game()
 
-# If the lock in button is pressed, determine if the player picked the right Rebecca.
+
+func _on_wrong() -> void:
+	pass # Replace with function body.
+
+
+func _on_timer_timeout() -> void:
+	emit_signal("game_over")

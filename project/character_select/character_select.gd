@@ -4,6 +4,9 @@ signal rebecca_selected
 
 
 func start():
+	$Label.visible_ratio = 0
+	$Label2.visible_ratio = 0
+	$Button.hide()
 	$Dialog1.play("text1")
 	$TalkingJadi.play("talking")
 

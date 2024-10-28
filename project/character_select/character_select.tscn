@@ -8,6 +8,21 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a076s"]
 bg_color = Color(0.207843, 0, 0.231373, 1)
 
+[sub_resource type="Animation" id="Animation_fy8wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_ur1bu"]
 resource_name = "text1"
 length = 3.0
@@ -24,12 +39,18 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_fy8wn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x087j"]
+_data = {
+"RESET": SubResource("Animation_fy8wn"),
+"text1": SubResource("Animation_ur1bu")
+}
+
+[sub_resource type="Animation" id="Animation_0gfno"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/path = NodePath("Label2:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,12 +58,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x087j"]
-_data = {
-"RESET": SubResource("Animation_fy8wn"),
-"text1": SubResource("Animation_ur1bu")
 }
 
 [sub_resource type="Animation" id="Animation_g3f5k"]
@@ -59,21 +74,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_0gfno"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label2:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q6jwk"]
@@ -144,14 +144,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -299.0
-offset_top = 20.0
-offset_right = 55.0
-offset_bottom = 133.0
+offset_left = -292.0
+offset_top = 23.0
+offset_right = 79.0
+offset_bottom = 136.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
 theme_override_font_sizes/font_size = 32
-text = "I need to start this game by telling you about my friend Rebecca. Yeah, my friend from high school."
+text = "One thing about me is that I love talking about my friend Rebecca. I'm going to tell as many stories"
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters = 0
@@ -162,14 +162,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -150.0
-offset_top = 141.0
-offset_right = 90.0
-offset_bottom = 312.0
+offset_left = -159.0
+offset_top = 113.0
+offset_right = 81.0
+offset_bottom = 342.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.207843, 0, 0.231373, 1)
 theme_override_font_sizes/font_size = 32
-text = "You need to try and visualize the Rebecca that I'm talking about. It's the only way the story makes sense."
+text = "as I can fit into 30 seconds. I need you to identify which Rebecca I'm talking about. Got it?"
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters = 0
@@ -204,14 +204,14 @@ libraries = {
 [node name="Button" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 252.0
-offset_top = 302.0
-offset_right = 338.0
-offset_bottom = 338.0
+offset_left = 236.0
+offset_top = 280.0
+offset_right = 358.0
+offset_bottom = 316.0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg1f5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdtu5")
-text = "Go on..."
+text = "Let's do it!"
 
 [node name="TalkingJadi" type="AnimatedSprite2D" parent="."]
 position = Vector2(96, 245)
