@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://g68minc3rrdv"]
+[gd_scene load_steps=19 format=3 uid="uid://g68minc3rrdv"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_bc72h"]
 [ext_resource type="Script" path="res://resources/character.gd" id="2_i4vm0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c01j3dpba64f3" path="res://resources/rebecca7.tres" id="9_d523i"]
 [ext_resource type="Resource" uid="uid://3dfcgvqex0wa" path="res://resources/rebecca8.tres" id="10_h7vcq"]
 [ext_resource type="PackedScene" uid="uid://dvipta2vblwk6" path="res://game/portrait_buttons/portrait_button.tscn" id="11_awxjo"]
+[ext_resource type="Resource" uid="uid://c0xcmcsklsa0" path="res://resources/rebecca9.tres" id="11_ntthj"]
 [ext_resource type="PackedScene" uid="uid://c8rk85vfjbtj6" path="res://game/textbox/textbox.tscn" id="12_ar6a3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0kvg"]
@@ -56,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bc72h")
-_rebeccas = Array[ExtResource("2_i4vm0")]([ExtResource("3_srr07"), ExtResource("4_ryeib"), ExtResource("5_uwgyg"), ExtResource("6_cucb4"), ExtResource("7_itqgr"), ExtResource("8_d2263"), ExtResource("9_d523i"), ExtResource("10_h7vcq")])
+_rebeccas = Array[ExtResource("2_i4vm0")]([ExtResource("3_srr07"), ExtResource("4_ryeib"), ExtResource("5_uwgyg"), ExtResource("6_cucb4"), ExtResource("7_itqgr"), ExtResource("8_d2263"), ExtResource("9_d523i"), ExtResource("10_h7vcq"), ExtResource("11_ntthj")])
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

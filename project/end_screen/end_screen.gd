@@ -10,6 +10,7 @@ func start():
 	$YesButton.hide()
 	$NoButton.hide()
 	$Dialog1.play("talk1")
+	$TalkingJadi.play("talking")
 
 
 func _on_yes_button_pressed() -> void:
@@ -33,3 +34,4 @@ func _on_dialog_2_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "talk2":
 		$YesButton.show()
 		$NoButton.show()
+		$TalkingJadi.stop()

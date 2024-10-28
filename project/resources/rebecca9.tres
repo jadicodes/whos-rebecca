@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterBase" load_steps=3 format=3 uid="uid://c0xcmcsklsa0"]
+
+[ext_resource type="Texture2D" uid="uid://dlils24g46kko" path="res://resources/rebecca_portrait_9.png" id="1_fdcdd"]
+[ext_resource type="Script" path="res://resources/character.gd" id="1_hwqn6"]
+
+[resource]
+script = ExtResource("1_hwqn6")
+portrait = ExtResource("1_fdcdd")
+traits = Array[String](["known her school's fight song by heart.", "just gotten braces (for the first time).", "a violent, swinging ponytail."])
